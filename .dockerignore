@@ -1,2 +1,4 @@
 node_modules
 npm-debug.log
+start-jenkins-blueocean.sh
+start-jenkins-docker.sh
