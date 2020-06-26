@@ -1,8 +1,21 @@
-node {
-    label 'docker-agent'
-    checkout scm
-    def customImage = docker.build("codesenju/nodejs-web-app:${env.BUILD_ID}")
-    customImage.push()
+  
+pipeline {
+  agent {
+    node {
+      label 'docker-agent'
+    }
 
-    customImage.push('latest')
+  }
+  stages {
+    stage('Build') {
+      steps {
+        sh '''ls
+docker info
+docker build -t codesenju/nodejs-web-app:${BUILD_NUMBER} .
+docker tag codesenju/nodejs-web-app:${BUILD_NUMBER} codesenju/nodejs-web-app:latest
+docker images'''
+      }
+    }
+
+  }
 }
