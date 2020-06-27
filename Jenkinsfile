@@ -2,7 +2,7 @@
 pipeline {
   agent {
     docker {
-      image 'dokcer:dind-rootless'
+      image 'docker:dind'
     }
 
   }
@@ -10,6 +10,7 @@ pipeline {
     stage('Build') {
       steps {
         sh '''ls
+        whoami
 docker info
 docker build -t codesenju/nodejs-web-app:${BUILD_NUMBER} .
 docker tag codesenju/nodejs-web-app:${BUILD_NUMBER} codesenju/nodejs-web-app:latest
