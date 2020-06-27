@@ -1,8 +1,8 @@
   
 pipeline {
   agent {
-    node {
-      label 'docker-agent'
+    docker {
+      image 'dokcer:dind'
     }
 
   }
