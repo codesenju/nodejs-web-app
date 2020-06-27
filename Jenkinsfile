@@ -2,7 +2,7 @@
 pipeline {
   agent {
     docker {
-      image 'dokcer:dind'
+      image 'dokcer:dind-rootless'
     }
 
   }
