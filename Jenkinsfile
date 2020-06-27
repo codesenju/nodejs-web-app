@@ -3,6 +3,7 @@ pipeline {
   agent {
     docker {
       image 'docker:dind'
+      args '/var/run/docker.socket:/var/run/docker.socket'
     }
 
   }
