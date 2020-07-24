@@ -1,13 +1,31 @@
 {
-  "name": "docker_web_app",
+  "name": "nodejs",
   "version": "1.0.0",
   "description": "Node.js on Docker",
   "author": "First Last <first.last@example.com>",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "node_modules/mocha/bin/mocha test/test-pages.js"
   },
   "dependencies": {
     "express": "^4.16.1"
-  }
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.0.1",
+    "request": "^2.88.2"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codesenju/nodejs-web-app.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codesenju/nodejs-web-app/issues"
+  },
+  "homepage": "https://github.com/codesenju/nodejs-web-app#readme"
 }
