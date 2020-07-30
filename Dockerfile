@@ -1,5 +1,5 @@
-#FROM node:10
-FROM s390x:node
+FROM node
+#FROM s390x:node
 # Create app directory
 WORKDIR /usr/src/app
 
