@@ -1,5 +1,5 @@
-FROM docker.io/node
-#FROM s390x:node
+#FROM docker.io/node
+FROM docker.io/s390x/node
 # Create app directory
 WORKDIR /usr/src/app
 
