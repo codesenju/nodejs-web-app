@@ -1,0 +1,22 @@
+version: '2'
+services:
+  test:
+    build:
+      context: .
+      dockerfile: test.Dockerfile
+    depends_on: 
+      - app
+    networks:
+      devops:
+  app:
+    build:
+      context: .
+      dockerfile:  app.Dockerfile
+    ports:
+      - "80:8080"
+    networks:
+      devops:
+        aliases:
+          - app
+networks:
+  devops:
